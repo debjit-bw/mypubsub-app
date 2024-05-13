@@ -5,7 +5,7 @@ import { generateClient } from '@aws-amplify/api';
 import { useEffect, useState } from 'react';
 
 // The path of your codegen files. You may need to update this.
-import { publish } from '/Users/debjit/Drawer/astrotechlabs/mypubsub-app/src/graphql/mutations.ts'
+// import { publish } from '/Users/debjit/Drawer/astrotechlabs/mypubsub-app/src/graphql/mutations.ts'
 import { subscribe } from '/Users/debjit/Drawer/astrotechlabs/mypubsub-app/src/graphql/subscriptions.ts';
 
 // Your Amplify configuration.
@@ -23,22 +23,22 @@ Amplify.configure({
 const client = generateClient();
 
 export default function RealtimeStarterPage() {
-    const [data, setData] = useState('');
+    // const [data, setData] = useState('');
     const [received, setReceived] = useState('');
 
     // Define the channel name here
-    let name = 'robots';
+    let name = '0x7f9db6a5dc58563182558c776e46171472f4cf03952ffdee20f50cb6a563e3d0';
 
     // Publish data to subscribed clients
-    async function handleSubmit(evt) {
-        evt.preventDefault();
-        if (!data) return;
-        console.log("debjit", name, data, typeof data)
-        await client.graphql({
-            query: publish,
-            variables: { name, data },
-        });
-    }
+    // async function handleSubmit(evt) {
+    //     evt.preventDefault();
+    //     if (!data) return;
+    //     console.log("debjit", name, data, typeof data)
+    //     await client.graphql({
+    //         query: publish,
+    //         variables: { name, data },
+    //     });
+    // }
 
     // subscribe to events
     useEffect(() => {
@@ -53,7 +53,7 @@ export default function RealtimeStarterPage() {
     <div className="App">
         <header className="App-header">
         <p>Send/Push JSON to channel &quot;{name}&quot;...</p>
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit}>
             <textarea
             rows="5"
             cols="60"
@@ -64,7 +64,7 @@ export default function RealtimeStarterPage() {
             ></textarea>
             <br />
             <input type="submit" value="Submit" />
-        </form>
+        </form> */}
         <p>Subscribed/Listening to channel &quot;{name}&quot;...</p>
         <pre>{!received || JSON.stringify(JSON.parse(received), null, 2)}</pre>
         </header>
