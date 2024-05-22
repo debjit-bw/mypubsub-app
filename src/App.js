@@ -15,7 +15,7 @@ Amplify.configure({
             endpoint: 'https://zzf363g765hvnfx5p7arpvswaq.appsync-api.eu-central-1.amazonaws.com/graphql',
             region: 'eu-central-1',
             defaultAuthMode: 'apiKey',
-            apiKey: 'da2-xv7u5a2xunbk3p4i3rjlp2fki4',
+            apiKey: 'da2-kv4x7vxb7neu7g5ehpmtzmxsdy',
         },
     },
 });
@@ -27,7 +27,7 @@ export default function RealtimeStarterPage() {
     const [received, setReceived] = useState('');
 
     // Define the channel name here
-    let name = '0x7f9db6a5dc58563182558c776e46171472f4cf03952ffdee20f50cb6a563e3d0';
+    let name = '0x43f29de999740c3bd68a50e6b298ab36baf73355f1813958257637c985fe07eb';
 
     // Publish data to subscribed clients
     // async function handleSubmit(evt) {
